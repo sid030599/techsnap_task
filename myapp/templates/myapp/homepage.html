@@ -1,0 +1,20 @@
+{% extends 'myapp/index.html' %}
+    
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %} 
+    {{form|crispy }}
+    <h1>Mail sender</h1>
+
+    <p> Subject </p>
+    <input type="text" name="subject" /><br />
+    <p> Message </p>
+    <textarea name="message" id="" cols="30" rows="10"></textarea><br />
+    
+    <p>Emails</p>
+
+    <input type="text" name = "mailone" placeholder="emails"/><br />
+    <br /><input class="btn btn-danger" type="submit" value="Submit"><br />
+  </form>
+{% endblock %}
